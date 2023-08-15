@@ -2,21 +2,13 @@
 module.exports = {
   darkMode: ["class"],
 
-  safelist: [
-    "!duration-[0ms]",
-    "!delay-[0ms]",
-    'html.js :where([class*="taos:"]:not(.taos-init))',
+  content: [
+    "./pages/**/*.{js,jsx}",
+    "./components/**/*.{js,jsx}",
+    "./app/**/*.{js,jsx}",
+    "./src/**/*.{js,jsx}",
   ],
-  content: {
-    relative: true,
-    transform: (content) => content.replace(/taos:/g, ""),
-    files: [
-      "./pages/**/*.{js,jsx}",
-      "./components/**/*.{js,jsx}",
-      "./app/**/*.{js,jsx}",
-      "./src/**/*.{js,jsx}",
-    ],
-  },
+
   theme: {
     container: {
       center: true,
@@ -82,5 +74,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("taos/plugin")],
+  plugins: [require("tailwindcss-animate")],
 };
